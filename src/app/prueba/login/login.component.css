@@ -1,0 +1,65 @@
+.login-component {
+   color: #343a40;
+   font-family: Arial, sans-serif;
+   max-width: 400px;
+   margin: 20px auto;
+   padding: 20px;
+   background-color: #f8f9fa;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.login-form h2 {
+   color: #007bff;
+   text-align: center;
+
+}
+
+.login-form form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+
+}
+
+.login-form label {
+   margin-bottom: 5px;
+
+}
+
+.login-form input {
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #ced4da;
+   font-size: 16px;
+
+}
+
+.submit {
+   background-color: #007bff;
+   color: white;
+   padding: 10px 15px;
+   border: none;
+   border-radius: 25px;
+   cursor: pointer;
+   transition: background-color 0.3s, transform 0.2s;
+
+}
+
+.submit:hover {
+   background-color: #0056b3;
+   transform: scale(1.05);
+
+}
+
+.credenciales {
+   color: #dc3545;
+   background-color: #f8d7da;
+   border: 1px solid #f5c6cb;
+   border-radius: 5px;
+   padding: 10px;
+   margin: 20px 0;
+   text-align: center;
+   font-size: 1rem;
+}

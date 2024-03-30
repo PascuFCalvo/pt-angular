@@ -1,0 +1,27 @@
+<div class="user-detail-form">
+  <h2>Busca un usuario</h2>
+  <form (ngSubmit)="userDetail()">
+    <div>
+      <label for="id">Id:</label>
+      <input type="text" id="id" [(ngModel)]="id" name="id">
+    </div>
+
+    <button type="submit">Search</button>
+  </form>
+  <div>
+    <div *ngIf="client">
+      <div *ngIf="bringedUser">
+        <h2>Tu usuario:</h2>
+        <p>Id: {{client.id}}</p>
+        <p>Nombre: {{client.first_name}}</p>
+        <p>Apellido: {{client.last_name}}</p>
+        <p>Email: {{client.email}}</p>
+        <img [src]="client.avatar" alt="avatar">
+      </div>
+      <div *ngIf="!bringedUser">
+        <p>Usuario no encontrado</p>
+
+
+      </div>
+    </div>
+  </div>
