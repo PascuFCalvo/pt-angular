@@ -41,12 +41,11 @@ export class SingleUserComponent {
 
     this.http.get(url).subscribe((response: any) => {
       this.client = response.data;
-      console.log(this.client);
       this.bringedUser = true;
     });
 
-    if (this.id > 12 || this.id < 1) {
-      console.log('Usuario no encontrado');
+    if (this.id > 12 || this.id < 1 || isNaN(this.id)) {
+      alert('El ID debe ser un número entre 1 y 12');
       this.bringedUser = false;
     }
   }
