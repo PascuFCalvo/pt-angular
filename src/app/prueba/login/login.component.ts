@@ -16,14 +16,34 @@ export class LoginComponent {
   password: string;
   token: any;
   logedIn: boolean;
-  error:boolean;
-
+  error: boolean;
+  pages: number;
+  emails: any = [];
 
   constructor() {
     this.email = '';
     this.password = '';
     this.logedIn = false;
-    this.error=false;
+    this.error = false;
+    this.pages = 2;
+  }
+
+  ngOnInit() {
+    this.fetchEmails();
+  }
+
+  fetchEmails() {
+    for (let i = 1; i <= this.pages; i++) {
+      this.http
+        .get(`https://reqres.in/api/users?page=${i}`)
+        .subscribe((emails: any) => {
+          this.emails = [
+            ...this.emails,
+            ...emails.data.map((email: any) => email.email),
+          ];
+          return this.emails;
+        });
+    }
   }
 
   login() {
@@ -34,8 +54,12 @@ export class LoginComponent {
     const url = 'https://reqres.in/api/login';
 
     if (this.email === '' || this.password === '') {
-      console.log('Email o Password vacios');
-      this.error=true;
+      this.error = true;
+      return;
+    }
+
+    if (!this.emails.includes(this.email)) {
+      this.error = true;
       return;
     }
 
