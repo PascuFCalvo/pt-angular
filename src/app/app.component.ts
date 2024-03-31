@@ -21,4 +21,8 @@ import { SingleUserComponent } from './prueba/single-user/single-user.component'
 })
 export class AppComponent {
   title = 'angular';
+
+  
 }
+
+

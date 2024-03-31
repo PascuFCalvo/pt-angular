@@ -55,19 +55,31 @@ export class LoginComponent {
 
     if (this.email === '' || this.password === '') {
       this.error = true;
-      return;
+      setTimeout(() => {
+        this.error = false;
+      }, 2000);
+      localStorage.setItem('token', '');
     }
 
     if (!this.emails.includes(this.email)) {
       this.error = true;
-      return;
+      setTimeout(() => {
+        this.error = false;
+      }, 2000);
+      localStorage.setItem('token', '');
     }
 
     this.http.post(url, data).subscribe((response: any) => {
-      console.log(response);
       this.token = response.token;
-      this.logedIn = true;
+      localStorage.setItem('token', this.token);
+
+      if (this.token !== '') {
+        console.log('Login correcto');
+        this.logedIn = true;
+      } else {
+        console.log('Login erroneo');
+        this.logedIn = false;
+      }
     });
-    console.log(`Logeado con Email: ${this.email}, Password: ${this.password}`);
   }
 }

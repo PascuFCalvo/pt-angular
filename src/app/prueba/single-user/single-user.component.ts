@@ -15,10 +15,25 @@ export class SingleUserComponent {
   id: any;
   client: any = [];
   bringedUser: any;
+  authorized: boolean;
 
   constructor() {
     this.id = '';
     this.bringedUser = false;
+    this.authorized = false;
+  }
+
+  ngOnInit() {
+    this.isAuthorized();
+  }
+
+  isAuthorized() {
+    let token = localStorage.getItem('token');
+    if (token !== '') {
+      this.authorized = true;
+    } else {
+      this.authorized = false;
+    }
   }
 
   userDetail() {

@@ -18,10 +18,10 @@
 
   <div *ngIf="error">
     <p class="credenciales">Email o contraseña incorrectas</p>
-
-    <div *ngIf="logedIn">
-      <p>Este es tu token de acceso</p>
-      <h1> {{this.token}}</h1>
-    </div>
-
   </div>
+  <div *ngIf="logedIn">
+    <p>Este es tu token de acceso</p>
+    <h1> {{this.token}}</h1>
+  </div>
+
+</div>

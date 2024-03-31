@@ -16,10 +16,25 @@ export class UserComponent {
   filteredClient: any;
   details: boolean = false;
   usuariodetalle: any;
+  authorized: boolean;
 
   constructor() {
     this.fetchUsers();
     this.filteredClient = [];
+    this.authorized = false;
+  }
+
+  ngOnInit() {
+    this.isAuthorized();
+  }
+
+  isAuthorized() {
+    let token = localStorage.getItem('token');
+    if (token !== "") {
+      this.authorized = true;
+    } else {
+      this.authorized = false;
+    }
   }
 
   fetchUsers() {

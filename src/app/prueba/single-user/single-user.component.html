@@ -1,4 +1,4 @@
-<div class="user-detail-form">
+<div *ngIf="authorized" class="user-detail-form">
   <h2>Busca un usuario</h2>
   <form (ngSubmit)="userDetail()">
     <div>
@@ -24,4 +24,7 @@
 
       </div>
     </div>
+  </div>
+  <div *ngIf="!authorized">
+    <p>Debes hacer login para ver los detalles de un usuario</p>
   </div>
