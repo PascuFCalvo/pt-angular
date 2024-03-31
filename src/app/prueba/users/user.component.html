@@ -2,6 +2,17 @@
     <div *ngFor="let user of clients">
         <h1>{{ user.first_name }}</h1>
         <img src="{{ user.avatar }}" alt="{{ user.first_name }}">
+        <button (click)="showDetails(user.id)"> Detalles </button>
+    </div>
+</div>
+<div *ngIf="this.details" class="details-overlay">
+    <div class="details-container">
+        <h2>Tu usuario:</h2>
+        <p>Id: {{ usuariodetalle.id }}</p>
+        <p>Nombre: {{ usuariodetalle.first_name }}</p>
+        <p>Apellido: {{ usuariodetalle.last_name }}</p>
+        <p>Email: {{ usuariodetalle.email }}</p>
+        <button (click)="closeDetails()" class="close-button">Cerrar</button>
     </div>
 </div>
 <div>

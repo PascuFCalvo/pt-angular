@@ -1,16 +1,24 @@
 <h1 id="title">PRUEBA TECNICA </h1>
-<div id="botonera">
+<aside>
+    <div id="botonera">
 
-    <a routerLink="/prueba/login">
-        <div class="boton">Login</div>
-    </a>
+        <a routerLink="/prueba/login">
+            <div class="boton">Login</div>
+        </a>
 
-    <a routerLink="/prueba/users">
-        <div class="boton">Users</div>
-    </a>
+        <a routerLink="/prueba/users">
+            <div class="boton">Users</div>
+        </a>
 
-    <a routerLink="/prueba/single-user">
-        <div class="boton">Single users</div>
-    </a>
-</div>
+        <a routerLink="/prueba/single-user">
+            <div class="boton">Single users</div>
+        </a>
+    </div>
+</aside>
+
+
 <router-outlet></router-outlet>
+
+<section class="details">
+    <router-outlet name="details"></router-outlet>
+</section>
